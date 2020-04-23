@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Tasks List Manager</title>
+  </head>
+  <body>
+    <div class="menu-btn" id="menu-btn">
+      <i class="fas fa-arrow-right"></i>
+    </div>
+    <h1 class="greeting" id="greeting"></h1>
+    <div class="time" id="time"></div>
+    <div class="title">
+      <h2 id="title" class="title-header">ALL</h2>
+    </div>
+
+    <ul class="list" id="list"></ul>
+
+    <i class="fas fa-plus-circle add-btn" id="add-btn"></i>
+
+    <div class="category-menu" id="category-menu">
+      <div class="category">
+        <p class="all">ALL</p>
+        <p class="easy">EASY</p>
+        <p class="medium">MEDIUM</p>
+        <p class="hard">HARD</p>
+      </div>
+    </div>
+
+    <div class="add-container" id="add-container">
+      <div class="add-menu">
+        <form class="add-form">
+          <label for="task-name">Task name:</label>
+          <input
+            type="text"
+            placeholder="Enter name of the task..."
+            id="task-name"
+          />
+          <label for="due-date">Due date:</label>
+          <input type="datetime-local" id="due-date" value="yyyy-mm-dd" />
+          <label for="difficulty">Difficulty:</label>
+          <select class="difficulty" id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+          
+          <input type="submit" value="ADD" class="submit" id="submit" />
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

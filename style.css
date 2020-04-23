@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    min-height: 100vh;
+    text-align: center;
+    background: #ededed;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    margin: 0;
+}
+
+.greeting {
+    font-size: 60px;
+    margin: 0;
+}
+
+.time {
+    font-size: 40px;
+    margin: 0 0 30px;
+}
+
+.time p {
+    margin: 0;
+    letter-spacing: 1.5px;
+}
+
+.title {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.title-header {
+    margin: 0;
+    width: 900px;
+    font-size: 40px;
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.35);
+    color: black;
+    padding: 15px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom: 0;
+}
+
+.list {
+    padding: 0;
+    border: 2px solid black;
+    border-top: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 900px;
+    margin: 0;
+    background-color: white;
+}
+
+.list li {
+    position: relative;
+    list-style-type: none;
+    display: flex;
+}
+
+.list li:not(:last-of-type) {
+    border-bottom: 1px solid black;
+}
+
+.list .id {
+    background-color: #d9d9d9;
+    color: black;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75;
+    width: 75px;
+    border: 0;
+    font-size: 25px;
+}
+
+.draggable {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    padding: 15px 10px 10px;
+    font-size: 20px;
+}
+
+.time-left {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 15px;
+    width: 300px;
+    /* margin-left: 300px; */
+}
+
+.time-left h4 {
+    margin: 0;
+}
+
+.task-name {
+    text-align: left;
+    margin: 0;
+    width: 100%;
+    font-size: 22px;
+}
+
+.task.over {
+    background-color: #d9d9d9;
+}
+
+.check-box {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.fa-grip-vertical {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.task-difficulty {
+    position: absolute;
+    bottom: 2px;
+    left: 78px;
+    font-size: 17px;
+    font-weight: 550;
+}
+
+.easy {
+    color: #42ff7e;
+}
+
+.medium {
+    color: #61d2ff;
+}
+
+.hard {
+    color: #fc4e4e;
+}
+
+.menu-btn {
+    cursor: pointer;
+    position: sticky;
+    top: 0;
+    margin: 0;
+    color: rgba(0, 0, 0, 0.6);
+    transform: translate(-730px, 10px);
+    font-size: 40px;
+    transition: transform 0.3s ease-in;
+}
+
+.menu-btn.show {
+    transform: translate(-410px, 10px);
+}
+
+.category-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #fcfcfc;
+    width: 318px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    transition: transform 0.3s ease-in;
+    transform: translateX(-100%);
+}
+
+.category-menu.show {
+    transform: translateX(0);
+}
+
+.category {
+    position: sticky;
+    top: 0;
+    width: 50%;
+}
+
+.category p {
+    width: 100%;
+    margin: 0;
+    padding: 15px 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.6);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.add-btn {
+    cursor: pointer;
+    width: 100px;
+    font-size: 35px;
+    margin: 15px 0;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.add-btn:active {
+    transform: scale(0.98);
+}
+
+.add-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2;
+}
+
+.add-container.show {
+    display: block;
+}
+
+.add-menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 290px;
+    background: white;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+input, select {
+    width: 100%;
+    height: 30px;
+    outline: none;
+    border: 1.5px solid black;
+    border-radius: 4px;
+    padding: 4px;
+    margin: 10px 0;
+}
+
+.add-menu input.wrong {
+    border: 1.5px solid red;
+}
+
+.add-menu label {
+    font-weight: bold;
+}
+
+.add-menu .submit {
+    cursor: pointer;
+    border: 1.5px solid black;
+    border-radius: 20px;
+    width: 60px;
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.add-menu .submit:active {
+    transform: scale(0.98);
+}
